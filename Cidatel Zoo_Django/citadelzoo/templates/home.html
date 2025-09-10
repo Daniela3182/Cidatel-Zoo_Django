@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Inicio{% endblock %}
+{% block content %}
+<h1 class="title">Citadel Zoo</h1>
+<p class="lead">Software educativo que enseña matemáticas por medio de juegos para dinamizar el aprendizaje. Los estudiantes pueden acceder y jugar desde la app.</p>
+<div class="grid">
+  <a class="card" href="/games/">
+    <h3>Entrar a los juegos</h3>
+    <p>Sumas, restas, multiplicación y división por niveles.</p>
+  </a>
+  <a class="card" href="/games/scoreboard/">
+    <h3>Puntajes</h3>
+    <p>Top 20 de sesiones con mejores resultados.</p>
+  </a>
+</div>
+{% endblock %}

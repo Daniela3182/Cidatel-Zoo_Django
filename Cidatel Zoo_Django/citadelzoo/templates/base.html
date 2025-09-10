@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Citadel Zoo{% endblock %}</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <a href="/">Inicio</a>
+    <a href="/games/">Juegos</a>
+    <a href="/games/scoreboard/">Puntajes</a>
+    {% if request.user.is_authenticated %}
+      <span class="sep">|</span>
+      <span>Hola, { '{' } request.user.first_name|default:request.user.username { '}' }</span>
+      <a href="/accounts/salir/">Salir</a>
+    {% else %}
+      <span class="sep">|</span>
+      <a href="/accounts/ingresar/">Ingresar</a>
+    {% endif %}
+  </nav>
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="footer">© 2025 Citadel Zoo — Software educativo de matemáticas</footer>
+</body>
+</html>

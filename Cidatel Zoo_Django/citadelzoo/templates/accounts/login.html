@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Ingresar{% endblock %}
+{% block content %}
+<h1 class="title">Ingresar</h1>
+<form method="post" class="card">
+  {% csrf_token %}
+  <label>Nombre</label>
+  <input name="nombre" required>
+  <label>Grado</label>
+  <input name="grado" required placeholder="1, 2, 3, 4 o 5">
+  <button type="submit">Entrar</button>
+</form>
+{% endblock %}

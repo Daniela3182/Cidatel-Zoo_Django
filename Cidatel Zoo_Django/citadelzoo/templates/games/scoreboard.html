@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Puntajes{% endblock %}
+{% block content %}
+<h1 class="title">Puntajes destacados</h1>
+<table class="table">
+<thead><tr><th>Jugador</th><th>Juego</th><th>Nivel</th><th>Aciertos</th><th>Total</th><th>%</th></tr></thead>
+<tbody>
+{% for s in top %}
+<tr>
+  <td>{{ s.user.first_name|default:s.user.username|default:"Invitado" }}</td>
+  <td>{{ s.get_game_type_display }}</td>
+  <td>{{ s.level }}</td>
+  <td>{{ s.correct }}</td>
+  <td>{{ s.total }}</td>
+  <td>{{ s.score_pct }}</td>
+</tr>
+{% empty %}
+<tr><td colspan="6">Aún no hay puntajes.</td></tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock %}

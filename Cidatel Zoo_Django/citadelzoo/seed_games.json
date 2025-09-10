@@ -1,0 +1,15 @@
+[
+  {
+    "model": "games.gamesession",
+    "pk": 1,
+    "fields": {
+      "user": null,
+      "game_type": "sumas",
+      "level": 1,
+      "started_at": "2025-01-01T12:00:00Z",
+      "finished_at": "2025-01-01T12:10:00Z",
+      "correct": 8,
+      "total": 10
+    }
+  }
+]

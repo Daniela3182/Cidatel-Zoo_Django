@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Jugar{% endblock %}
+{% block content %}
+<h1 class="title">Pregunta {{ q_index|add:1 }}</h1>
+<p class="big">{{ q.prompt }}</p>
+<form method="post" class="card">
+  {% csrf_token %}
+  <input name="answer" type="number" autofocus required>
+  <button type="submit">Responder</button>
+</form>
+<p>Te faltan {{ remaining|add:-1 }} preguntas.</p>
+{% endblock %}

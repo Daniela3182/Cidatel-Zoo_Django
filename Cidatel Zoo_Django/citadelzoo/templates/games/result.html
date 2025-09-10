@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}Resultado{% endblock %}
+{% block content %}
+<h1 class="title">¡Terminaste!</h1>
+<p>Juego: {{ session.get_game_type_display }} | Nivel: {{ session.level }}</p>
+<p>Correctas: <strong>{{ session.correct }}</strong> de {{ session.total }} ({{ session.score_pct }}%)</p>
+<a class="button" href="/games/">Intentar de nuevo</a>
+{% endblock %}
